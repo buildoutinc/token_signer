@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    token_signer (0.0.1)
+    token_signer (0.1.0)
       activesupport (~> 6.0)
 
 GEM

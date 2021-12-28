@@ -12,4 +12,5 @@ require 'token_signer'
 # Pry.start
 
 require 'irb'
+require 'irb/completion'
 IRB.start(__FILE__)
