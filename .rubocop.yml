@@ -1,0 +1,20 @@
+require:
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - Gemfile
+    - "*.gemspec"
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/Documentation:
+  Enabled: false
