@@ -54,7 +54,7 @@ If you want a global `TokenSigner` instance for your app, because you have a sin
 
 ### Note on Gemfile.lock
 
-`Gemfile.lock` is in `.gitignore`, but the latest good `Gemfile.lock` is committed as `Gemfile.lock.snapshot`. After you clone the repo, create `Gemfile.lock` as a symlink: `ln -s Gemfile.lock.snapshot Gemfile.lock`.
+`Gemfile.lock` is in `.gitignore`, but the latest good `Gemfile.lock` is committed as `Gemfile.lock.snapshot`. After you clone the repo, create `Gemfile.lock` as a symlink: `ln -s Gemfile.lock.snapshot Gemfile.lock`. Then run `bundle update` to get the latest version of dependencies. If the tests pass, you can check in the modified `Gemfile.lock.snapshot`.
 
 This is an attempt to strike a balance between the pros & cons outlined by jrochkind in 2019 on this thread: https://www.reddit.com/r/ruby/comments/cr5vwn/gems_should_you_add_gemfilelock_to_git/
 
