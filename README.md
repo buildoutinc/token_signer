@@ -26,12 +26,12 @@ When validating a payload, you can also pass in a `max_age` keyword arg, so that
 
 ### Generating a signed payload
 
-`TokenSigner.generate` can be used to created a signed cookie value, using a secret different from `cookies.signed`.
+`TokenSigner#generate` can be used to created a signed cookie value, using a secret different from `cookies.signed`.
 Make sure to add cookie options `{domain: :all, tld_length: 2}` if needed.
 `payload` can be any serializable value, but be mindful of cookie size limits.
 
     cookies[cookie_name] = {
-      value: TokenSigner.generate(payload),
+      value: token_signer.generate(payload),
       httponly: true
     }
 
@@ -39,7 +39,7 @@ Make sure to add cookie options `{domain: :all, tld_length: 2}` if needed.
 
 Apps in the same domain can validate a token stored in the cookie, using the same secret as was used for `generate`.
 
-    TokenSigner.from_signed_string(cookie_value)
+    token_signer.from_signed_string(cookie_value)
       .when_invalid {
         ...
       }.when_valid do |payload, _|
